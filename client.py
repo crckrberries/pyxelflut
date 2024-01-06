@@ -65,8 +65,8 @@ for y in range(height):
     line = ''
     for x in range(width):
         rgb = img.getpixel((x, y)) # get color of pixel
-        hexcolor = '%02x%02x%02x' % (rgb) # convert color to hex
-        line += 'PX %d %d %s\n' % (x + xoff, y + yoff, hexcolor) # create command
+        hexcolor = f'{rgb[0]:02x}{rgb[1]:02x}{rgb[2]:02x}'  # convert color to hex
+        line += f'PX {x + xoff} {y + yoff} {hexcolor}\n' # create command
     lines.append(line) # add command to The List
 
 
