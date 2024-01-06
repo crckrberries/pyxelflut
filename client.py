@@ -17,11 +17,11 @@ class Thr: # thread class with initializer and function
     def sendlinesMulti(self, name, list):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # creates a socket for every thread TODO: dont do that
         # (if i dont do this, it becomes a race condition)
-        # s.connect(("tcp://pixelflut.uwu.industries", 1234))
-        s.connect(("127.0.0.1", 1234)) # replace with host and port you need
+        s.connect(("tcp://pixelflut.uwu.industries", 1234))
+        # s.connect(("127.0.0.1", 1234)) # replace with host and port you need
         for line in list[name]:
             s.send(line.encode())
-            time.sleep(0.1) # time.sleep to simulate latency when testing on local server, remove before using
+            # time.sleep(0.1) # time.sleep to simulate latency when testing on local server, remove before using
 
 def chunks(lst, n): # this is like the only thing in this program that is written well
     output = list() # this creates a list where we will put the other lists
@@ -45,6 +45,8 @@ elif mode == "w": # wipe screen with black with specified size
 elif mode == "r":
     w, h = [int(elem) for elem in input("size: ").split()]
     img = Image.fromarray(np.random.randint(0,255,(h,w,3),dtype=np.dtype('uint8')))
+elif mode == "c":
+    img = Image.new('RGB', ([int(elem) for elem in input("size: ").split()]), tuple(int(elem) for elem in input("color: ").split()))
 else: # draw image and rescale to specified size
     filename = input("file: ")
     img = Image.open(filename)
