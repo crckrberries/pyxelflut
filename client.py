@@ -29,10 +29,6 @@ def chunks(lst, n): # this is like the only thing in this program that is writte
         output.append(lst[i:i + n]) # puts the chunks in the output list
     return output
 
-# s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# # s.connect(("tcp://pixelflut.uwu.industries", 1234))
-# s.connect(("127.0.0.1", 1234))
-
 mode = input("mode: ") # selects between different operation types
 if  mode == "t": # text mode - generates text at specified size
     txt = input("text: ")
