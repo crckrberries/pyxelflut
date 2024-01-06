@@ -1,4 +1,4 @@
 # pikselsel
-pikselsel is a multi-threaded [pixelflut](https://github.com/defnull/pixelflut) client written in Python. It supports images, text rendering, and options to quickly wipe the canvas or fill it with random noise.
+pikselsel is a multi-threaded [pixelflut](https://github.com/defnull/pixelflut) client written in Python. It supports images, text rendering, and options to quickly wipe the canvas,  fill it with random noise, or draw solid color blocks.
 
-the name comes from the turkish word for pixel which is "piksel", and the turkish word for flood which is "sel"
+the name comes from the turkish word for pixel and flood, which are "piksel" and "sel" respectively
